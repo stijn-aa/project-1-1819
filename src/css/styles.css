@@ -1,1 +1,123 @@
 
+*{
+    box-sizing: border-box;
+}
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid rgb(204, 0, 0);
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: rgb(204, 0, 0);
+}
+
+.searchButton {
+  position: absolute;  
+  right: -50px;
+  width: 40px;
+  height: 36px;
+  border: 1px solid rgb(204, 0, 0);
+  background:  rgb(204, 0, 0);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.collectionButton{
+  right: -153px;
+  position: absolute;
+}
+
+.Button {
+  margin: 0px;
+
+
+  width: auto;
+  height: 36px;
+  border: 1px solid rgb(204, 0, 0);
+  background:  rgb(204, 0, 0);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 53px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container{
+  order:2;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  justify-content: center;
+  margin-top: 72px;
+
+}
+article{
+    text-align: center;
+    margin: auto;
+    padding: 1em;
+    width: 25vw;
+
+
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+div.loader>img{
+  animation-name: loading;
+  animation-duration: 15.5s;
+  animation-iteration-count: infinite;
+}
+
+div.smallLoader>img{
+  width: 20px;
+  margin: 20px;
+  height: 20px;
+}
+
+
+div.loader{
+
+}
+
+
+
+
+@keyframes loading {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
