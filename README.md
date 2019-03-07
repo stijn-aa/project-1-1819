@@ -21,7 +21,7 @@ In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek t
 
 #Could haves:
 
-•	De boeken in je must-reads lijst kunnen categoriseren. (Prive en openbaar)
+•	De boeken meerdere lijst kunnen maken en categoriseren. (Prive en openbaar)
 
 •	Lijstjes van vrienden in zien.
 
