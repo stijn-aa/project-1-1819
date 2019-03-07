@@ -1,4 +1,4 @@
-#Boek deel feature
+##Boek deel feature
 
 Doel: boek-aanbevelingen aan anderen stimuleren. En hierdoor de discoverability van de boeken te vergroten. 
 
