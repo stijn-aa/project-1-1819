@@ -105,6 +105,10 @@ div.smallLoader>img{
   height: 20px;
 }
 
+.popup{
+  position: fixed;
+
+}
 
 div.loader{
 

@@ -33,7 +33,8 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         const uniques = [...new Set(booksTemp)]; //wouters code om book toe te voegen aan array als die er nog niet in zit #werkt niet
 
         localStorage.setItem('bookCollection',JSON.stringify(uniques))
-    }
+    },
+    currentId: undefined,
   }
 
   const utils = {
@@ -65,7 +66,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
 
       const searchButton = document.querySelector(".searchButton");
       searchButton.addEventListener("click", function() {
-        router.searchResults();
+        routie("searchResults"); 
       })
 
       const collectionButton = document.querySelector(".collectionButton");
@@ -94,9 +95,11 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         `
         article.innerHTML = elementTempalte
         container.appendChild(article);
+
         article.addEventListener("click", function(){
         storage.bookId = id;
-        router.detail(id);
+        console.log(id);
+        routie('detailPage');
         })
       }
       
@@ -134,7 +137,9 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
       const shareButton = document.querySelector(".shareButton");
       shareButton.addEventListener("click", function() {
         // router.sharedLink(id);
-        routie('collection/'+ id);
+        //routie('add/'+ id);
+
+        render.sharePopup(id);
       
       })
     },
@@ -142,7 +147,9 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     empty: function() {
 
       const container = document.querySelector(".container");
+      const popup = document.querySelector(".popup");
       container.innerHTML = ""
+      popup.innerHTML = ""
     },
 
     loader: function(){
@@ -162,7 +169,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     },
     smallLoader: function(){
 
-      const article = document.querySelector("article");
+      const container = document.querySelector(".container");
       const smallLoaderArticle = document.createElement('smallLoaderArticle')
       let smallLoader =
         `
@@ -173,7 +180,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
 
         `
         smallLoaderArticle.innerHTML = smallLoader
-        article.appendChild(smallLoaderArticle);
+        container.appendChild(smallLoaderArticle);
     },
     removeSmallLoader: function(){
       const smallLoaderArticle = document.querySelector('smallLoaderArticle')
@@ -183,6 +190,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
   
     collection: function(bookCollection){
 
+      
       render.empty();
       console.log(bookCollection)
       for (const book of bookCollection) {
@@ -201,11 +209,26 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         container.appendChild(article);
         article.addEventListener("click", function(){
         storage.bookId = id;
-        router.detail(id);
+        console.log(id);
+        routie('detailPage');
         })
       }
     },
-    sharePopup: function(){
+    sharePopup: function(id){
+
+      const popup = document.querySelector(".popup");
+      const sharePopupArticle = document.createElement('sharePopupArticle')
+      let sharePopup =
+        `
+        
+        <h1>deel het boek</h1>
+        <p>http://127.0.0.1:5500/project-1-1819/#add/${id}</p>
+        
+
+        `
+        sharePopupArticle.innerHTML = sharePopup
+        popup.appendChild(sharePopupArticle);
+
 
 
     },
@@ -230,12 +253,21 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         '': function() {
           router.home();
         },
+        'searchResults': function(){
+          router.searchResults();
+        },
         'collection': function(){
           router.collection()
         },
-        'collection/:id':function(){
+        'detailPage': function(){
+         
+          router.detail(storage.bookId);
+        },
+        'add/:id':function(){
           const id = document.URL.substring(document.URL.lastIndexOf('/') + 1)
           router.sharedLink(id);
+          // router.collection();
+           storage.currentId = id
         }
 
       })
