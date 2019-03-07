@@ -21,9 +21,9 @@ In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek t
 
 #Could haves:
 
-•	De boeken meerdere lijst kunnen maken en categoriseren. (Prive en openbaar)
+•	Meerdere lijst kunnen maken en categoriseren. (Prive en openbaar)
 
-•	Lijstjes van vrienden in zien.
+•	Lijstjes van vrienden kunnen zien.
 
 •	Hele lijsten delen als leeslijst voor bijvoorbeeld scholieren en studenten.
 
