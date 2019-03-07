@@ -89,8 +89,9 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         const article = document.createElement('article')
         let elementTempalte =
         `
-        <h1 class='id${id}'>${titel}</h1>
         <img src='${imgLink}'>
+        <h1 class='bookTitel id${id}'>${titel}</h1>
+        
 
         `
         article.innerHTML = elementTempalte
@@ -121,35 +122,31 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
 
       const container = document.querySelector(".container");
       const article = document.createElement('article')
+      article.setAttribute("detail", "article")
       let bookArticle =
       `
-      <h1 class = ${id}>${titel}</h1>
+      <h1 class='detailTitel ${id}'>${titel}</h1>
       <img class = "detailImg" src='${imgLink}'>
       <p class = "summery">${summery}</p>
       <p class = "auteur">${author}</p>
-      <button class="Button shareButton">
-      Add to collection
-      </button>
+      
+      <div class = "link">
+      <p>http://127.0.0.1:5500/project-1-1819/#add/${id}</p>
+      <p>Deel dit boek</p>
+      </div>
       `
       article.innerHTML = bookArticle
       container.appendChild(article);
 
-      const shareButton = document.querySelector(".shareButton");
-      shareButton.addEventListener("click", function() {
-        // router.sharedLink(id);
-        //routie('add/'+ id);
-
-        render.sharePopup(id);
       
-      })
     },
 
     empty: function() {
 
       const container = document.querySelector(".container");
-      const popup = document.querySelector(".popup");
+
       container.innerHTML = ""
-      popup.innerHTML = ""
+
     },
 
     loader: function(){
@@ -160,7 +157,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         `
         <div class='loader'>
         <img src='./src/img/loading.svg'>
-        <h1>loading</h1>
+        <h1>Loading</h1>
         </div>
 
         `
@@ -175,7 +172,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         `
         <div class='loader smallLoader'>
         <img src='./src/img/loading.svg'>
-        <p>loading</p>
+        <p>Boek toevoegen aan je lijst</p>
         </div>
 
         `
@@ -185,6 +182,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     removeSmallLoader: function(){
       const smallLoaderArticle = document.querySelector('smallLoaderArticle')
       smallLoaderArticle.innerHTML = ""
+      routie("collection");
 
     },
   
@@ -201,8 +199,9 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         const article = document.createElement('article')
         let elementTempalte =
         `
-        <h1 class='id${id}'>${titel}</h1>
+        
         <img src='${imgLink}'>
+        <h1 class='bookTitel id${id}'>${titel}</h1>
 
         `
         article.innerHTML = elementTempalte
@@ -213,24 +212,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         routie('detailPage');
         })
       }
-    },
-    sharePopup: function(id){
-
-      const popup = document.querySelector(".popup");
-      const sharePopupArticle = document.createElement('sharePopupArticle')
-      let sharePopup =
-        `
-        
-        <h1>deel het boek</h1>
-        <p>http://127.0.0.1:5500/project-1-1819/#add/${id}</p>
-        
-
-        `
-        sharePopupArticle.innerHTML = sharePopup
-        popup.appendChild(sharePopupArticle);
-
-
-
+      
     },
     sharedLink: function(books){
       render.removeSmallLoader();
@@ -254,6 +236,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
           router.home();
         },
         'searchResults': function(){
+          
           router.searchResults();
         },
         'collection': function(){
@@ -279,17 +262,21 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     searchResults: async function(){
 
       render.empty();
+      render.searchBar();
       render.loader();
+      routie("");
       const search = document.querySelector(".searchTerm").value;
       const stream = await api.createStream("search/" + search + "&librarian=true&facet=type(book)");
       stream
       .pipe(utils.clean)
       .pipe(render.searchResults);
+      
     },
 
     detail: function(id) {
 
       render.empty();
+      render.searchBar();
       const books = JSON.parse(localStorage.getItem('books'))
       console.log(books)
       const book = books.find(application.bookFind);
@@ -300,10 +287,12 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     collection: function(){
 
       render.empty();
+      render.searchBar();
       const bookCollection = JSON.parse(localStorage.getItem('bookCollection'))
       render.collection(bookCollection);
     },
     sharedLink: async function(id){
+      render.searchBar();
       render.smallLoader();
       const stream = await api.createStream("search/" + id + "&librarian=true&facet=type(book)");
       stream

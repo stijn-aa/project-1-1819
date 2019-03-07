@@ -1,9 +1,55 @@
-# Project 1 @cmda-minor-web · 2018-2019
+#Boek deel feature
 
-## Zoek in de de collectie van de OBA
+Doel: boek-aanbevelingen aan anderen stimuleren. En hierdoor de discoverability van de boeken te vergroten. 
 
-Het project vindt plaats bij de Centrale OBA. Maandagochtend is om 10.00 uur de kickoff, vrijdag zijn de presentaties van de resultaten. In een week bouwt iedere student een eigen prototype dat bezoekers kan helpen om items uit de OBA collectie te vinden. Technieken geleerd bij [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) en [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) worden toegepast bij het bouwen van de de prototypes.
+Het idee is om boeken te kunnen delen met anderen en er lijstjes mee te kunnen maken.
 
-We verzamelen maandagochtend om 09.45 op de 1e verdieping van de Centrale OBA, [Oosterdokskade 143](https://www.google.com/maps/place/OBA+library+of+Amsterdam/@52.3756983,4.9082087,15z/data=!4m2!3m1!1s0x0:0x6b97f693e6ecb494?ved=2ahUKEwioo6OrzubgAhWLNOwKHR6KDQgQ_BIwCnoECAYQCA).
+
+In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek toevoegt aan een eigen overzicht lijst. Je kunt het boek met de link toevoegen in je eigen overzicht of de link delen en hem zo toevoegen aan iemand anders zijn lijst.
+
+#Must haves: 
+
+•	Een link op de detail pagina van een boek dat het boek toevoegt aan de must reads lijst welke je kunt delen of zelf aanklikken.
+
+#Should haves:
+
+•	Een knop die er een verstuurbaar pakketje van maakt voor facebook, whatsapp of email.
+
+•	Een optie om boeken aan je eigen must-reads lijst toe te voegen.
+
+•	Lijst met vorige keer bezochte boeken, zodat je hem snel terug vind als je hem uit hebt en dus kunt delen.
+
+#Could haves:
+
+•	De boeken in je must-reads lijst kunnen categoriseren. (Prive en openbaar)
+
+•	Lijstjes van vrienden in zien.
+
+•	Hele lijsten delen als leeslijst voor bijvoorbeeld scholieren en studenten.
+
+#Would haves:
+
+•	Automatisch uit de must-reads lijsten wanneer het boek geleend wordt.
+
+•	Door de oba thematisch aanbevolen boeken lijstjes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

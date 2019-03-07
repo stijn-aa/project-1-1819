@@ -4,7 +4,7 @@
 }
 
 body{
-  background: #f2f2f2;
+  background: #eaeaea;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -15,11 +15,11 @@ body{
 
 .searchTerm {
   float: left;
-  width: 100%;
-  border: 3px solid rgb(204, 0, 0);
+  border: 0px solid rgb(204, 0, 0);
   padding: 5px;
+  padding-left: 10px;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 21px;
   outline: none;
   color: #9DBFAF;
 }
@@ -29,7 +29,7 @@ body{
 }
 
 .searchButton {
-  position: absolute;  
+  
   right: -50px;
   width: 40px;
   height: 36px;
@@ -42,8 +42,7 @@ body{
   font-size: 20px;
 }
 .collectionButton{
-  right: -153px;
-  position: absolute;
+
 }
 
 .Button {
@@ -66,11 +65,10 @@ body{
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 30%;
-  position: absolute;
-  top: 53px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
+  padding:30px;
+  margin-top: -50px;
+
 }
 .container{
   order:2;
@@ -82,10 +80,11 @@ body{
 
 }
 article{
-    text-align: center;
+    
     margin: auto;
     padding: 1em;
-    width: 25vw;
+    width: 45vw;
+    display: flex;
 
 
 }
@@ -111,9 +110,129 @@ div.smallLoader>img{
 }
 
 div.loader{
+  margin: auto;
+  text-align: center;
 
 }
+.bgBar{
+  position: fixed;
+  top:0px;
+  right: 0px;
+  background-color: #c9c9c9;
+  width: 100%;
+  height: 150px;
+}
+.panel{
 
+  position: fixed;
+  top: 6vh;
+  right: 181px;
+  background-color: white;
+  width: 79%;
+  height: 89vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+}
+.menu {
+  background-color: red;
+  height: inherit;
+  justify-content: center;
+  
+}
+
+.content {
+  overflow-y: scroll;
+}
+.menuContent{
+  flex-direction: column;
+  display: flex;
+}
+img.logo{
+  fill: white;
+margin: auto;
+padding:30px;
+}
+img.detailImg {
+  grid-area: img;
+
+  width: auto;
+  height: auto;
+  /* margin: auto; */
+}
+[detail=article]{
+  display: grid;
+    grid-template-columns: 27% auto;
+    grid-template-rows: 10% 10% 30% 10%;
+
+    grid-template-areas: 
+    "img titel "
+    "img auteur "
+    "img summery "
+    "img link ";
+}
+p.summery {
+  grid-area: summery;
+}
+.link{
+  grid-area: link;
+}
+p.auteur {
+  grid-area: auteur;
+}
+
+
+.menuItems{
+  display: flex;
+  flex-direction: column;
+  margin:auto;
+  padding:30px;
+}
+.menuButton{
+  background: transparent;
+  border: none !important;
+  color: white;
+  font-family: inherit;
+  font-size: 144%;
+  padding: 8px;
+  margin: 13px;
+  background-color: #cc0000;
+  border-radius: 18px;
+
+}
+.menuButton:hover{
+    text-decoration: underline;
+
+}
+h1.bookTitel{
+  grid-area: titel;
+  margin-left: 20px;
+  margin-top: 0px;
+
+}
+h1.detailTitel {
+  grid-area: titel;
+  margin: 0px;
+}
+div.link>p:first-of-type {
+  background: #e4e4e4;
+  border-radius: 18px;
+  padding: 6px;
+  color: black;
+  padding-left: 139px;
+}
+div.link>p:last-of-type {
+  background: #cc0000;
+  border-radius: 18px;
+  padding: 6px;
+  color: rgb(255, 255, 255);
+  width: 128px;
+  padding-left: 12px;
+  transform: translate(0px, -45px);
+}
+div.link>p{
+  display: flex;
+}
 
 
 
