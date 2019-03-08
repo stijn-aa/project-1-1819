@@ -217,21 +217,24 @@ h1.detailTitel {
   grid-area: titel;
   margin: 0px;
 }
-div.link>p:first-of-type {
+.link {
+  margin-top: 22px;
+}
+div.link>a:first-of-type {
   background: #e4e4e4;
   border-radius: 18px;
   padding: 6px;
   color: black;
   padding-left: 139px;
 }
-div.link>p:last-of-type {
+div.link>p:first-of-type {
   background: #cc0000;
   border-radius: 18px;
   padding: 6px;
   color: rgb(255, 255, 255);
   width: 128px;
   padding-left: 12px;
-  transform: translate(0px, -45px);
+  transform: translate(0px, -40px);
 }
 div.link>p{
   display: flex;
