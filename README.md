@@ -1,7 +1,6 @@
 #Boek deel feature
 
 Doel: boek-aanbevelingen aan anderen stimuleren. En hierdoor de discoverability van de boeken te vergroten. 
-
 Het idee is om boeken te kunnen delen met anderen en er lijstjes mee te kunnen maken.
 
 
