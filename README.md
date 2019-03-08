@@ -6,11 +6,11 @@ Het idee is om boeken te kunnen delen met anderen en er lijstjes mee te kunnen m
 
 In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek toevoegt aan een eigen overzicht lijst. Je kunt het boek met de link toevoegen in je eigen overzicht of de link delen en hem zo toevoegen aan iemand anders zijn lijst.
 
-# Must haves: 
+## Must haves: 
 
 •	Een link op de detail pagina van een boek dat het boek toevoegt aan de must reads lijst welke je kunt delen of zelf aanklikken.
 
-# Should haves:
+## Should haves:
 
 •	Een knop die er een verstuurbaar pakketje van maakt voor facebook, whatsapp of email.
 
@@ -18,7 +18,7 @@ In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek t
 
 •	Lijst met vorige keer bezochte boeken, zodat je hem snel terug vind als je hem uit hebt en dus kunt delen.
 
-# Could haves:
+## Could haves:
 
 •	Meerdere lijst kunnen maken en categoriseren. (Prive en openbaar)
 
@@ -26,7 +26,7 @@ In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek t
 
 •	Hele lijsten delen als leeslijst voor bijvoorbeeld scholieren en studenten.
 
-# Would haves:
+## Would haves:
 
 •	Automatisch uit de must-reads lijsten wanneer het boek geleend wordt.
 
