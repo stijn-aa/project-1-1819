@@ -166,7 +166,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
     },
     smallLoader: function(){
 
-      const container = document.querySelector(".content");
+      const container = document.querySelector(".container");
       const smallLoaderArticle = document.createElement('smallLoaderArticle')
       let smallLoader =
         `

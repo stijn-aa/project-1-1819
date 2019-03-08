@@ -73,7 +73,7 @@ body{
 .container{
   order:2;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0px auto;
   justify-content: center;
   margin-top: 72px;
