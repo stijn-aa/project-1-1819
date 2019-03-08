@@ -1,4 +1,4 @@
-#Boek deel feature
+#Boek deel feature voor oba website
 
 Doel: boek-aanbevelingen aan anderen stimuleren. En hierdoor de discoverability van de boeken te vergroten. 
 Het idee is om boeken te kunnen delen met anderen en er lijstjes mee te kunnen maken.
@@ -20,9 +20,9 @@ In dit prototype heb ik een link toegevoegd aan de detail pagina, die het boek t
 
 #Could haves:
 
-•	De boeken in je must-reads lijst kunnen categoriseren. (Prive en openbaar)
+•	Meerdere lijst kunnen maken en categoriseren. (Prive en openbaar)
 
-•	Lijstjes van vrienden in zien.
+•	Lijstjes van vrienden kunnen zien.
 
 •	Hele lijsten delen als leeslijst voor bijvoorbeeld scholieren en studenten.
 
