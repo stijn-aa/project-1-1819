@@ -131,7 +131,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
       <p class = "auteur">${author}</p>
       
       <div class = "link">
-      <p>http://127.0.0.1:5500/project-1-1819/#add/${id}</p>
+      <a href='https://boekdeelfeature.netlify.com/#add/${id}'>https://boekdeelfeature.netlify.com/#add/${id}</a>
       <p>Deel dit boek</p>
       </div>
       `
