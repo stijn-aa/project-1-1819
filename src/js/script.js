@@ -1,4 +1,4 @@
-import {API} from "../../node_modules/oba-wrapper/js/index.js"
+import {API} from "https://boekdeelfeature.netlify.com/node_modules/oba-wrapper/js/index.js"
 
 
 ( function () {
@@ -32,7 +32,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         booksTemp.push(book);
         const uniques = [...new Set(booksTemp)]; //wouters code om book toe te voegen aan array als die er nog niet in zit #werkt niet
 
-        localStorage.setItem('bookCollection',JSON.stringify(uniques))
+        localStorage.setItem('bookCollection',JSON.stringify(uniques)) // eigen localstorage ojbect maken met daarin de set item die het zet naar een eigen json file
     },
     currentId: undefined,
   }
@@ -64,7 +64,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
   const render = {
     searchBar: function(){
 
-      const searchButton = document.querySelector(".searchButton");
+      const searchButton = document.querySelector(".searchButton"); //als tekst sturen naar de browser
       searchButton.addEventListener("click", function() {
         routie("searchResults"); 
       })
@@ -87,7 +87,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
         const imgLink = book.imgLink;
         const container = document.querySelector(".container");
         const article = document.createElement('article')
-        let elementTempalte =
+        let elementTempalte = // ejs laten renderen
         `
         <img src='${imgLink}'>
         <h1 class='bookTitel id${id}'>${titel}</h1>
@@ -231,7 +231,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
 
   const router = {
     init: function() {
-      routie({
+      routie({ //ejs
         '': function() {
           router.home();
         },
@@ -266,7 +266,7 @@ import {API} from "../../node_modules/oba-wrapper/js/index.js"
       render.loader();
       routie("");
       const search = document.querySelector(".searchTerm").value;
-      const stream = await api.createStream("search/" + search + "&librarian=true&facet=type(book)");
+      const stream = await api.createStream("search/" + search + "&librarian=true&facet=type(book)"); //node fetch
       stream
       .pipe(utils.clean)
       .pipe(render.searchResults);
