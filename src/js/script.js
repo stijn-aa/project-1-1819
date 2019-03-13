@@ -1,4 +1,4 @@
-import {API} from "https://boekdeelfeature.netlify.com/node_modules/oba-wrapper/js/index.js"
+import {API} from "../../node_modules/oba-wrapper/js/index.js"
 
 
 ( function () {
